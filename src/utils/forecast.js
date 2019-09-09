@@ -15,10 +15,10 @@ const forecast = (latitude, longitude, callback) => {
         }
 
         const { currently, daily } = body;
-        const { temperature, precipProbability } = currently;
+        const { temperature, precipProbability, humidity } = currently;
         const { data: dailyData } = daily;
 
-       callback(undefined, `${dailyData[0].summary} It is currently ${temperature} degrees out. There is a ${precipProbability}% chance of rain.`);
+       callback(undefined, `${dailyData[0].summary} It is currently ${temperature} degrees out. There is a ${precipProbability}% chance of rain and a ${humidity} humidity.`);
     });
 };
 
